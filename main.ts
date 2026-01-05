@@ -1,8 +1,8 @@
-/* Copyright (c) 2020 MTHS All rights reserved
+/* Copyright (c) 2026 MTHS All rights reserved
  *
- * Created by: XXX
- * Created on: Sep 2020
- * This program ...
+ * Created by: scout mosley
+ * Created on: jan 2026
+ * This program works as a half adder
 */
 
-basic.showString('Hello, World!')
+
