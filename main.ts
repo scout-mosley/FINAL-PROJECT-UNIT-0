@@ -10,18 +10,20 @@ let ButtonB = 1
 
 // A buttonon
 input.onButtonPressed(Button.A, function () {
-    pins.digitalWritePin(DigitalPin.P0, 1)
+    pins.digitalWritePin(DigitalPin.P1, 1)
 
 })
 
 // B button on
  
 while (true) {
-    input.onButtonPressed(Button.A, function () {
+    input.onButtonPressed(Button.B, function () {
         if (ButtonB > 0) {
-            pins.digitalWritePin(DigitalPin.P0, 1)
+            pins.digitalWritePin(DigitalPin.P1, 1)
+            ButtonB -1
         } else {
-
+            pins.digitalWritePin(DigitalPin.P1, 0)
+            ButtonB +1
         }
     })
     }
