@@ -15,34 +15,19 @@ input.onButtonPressed(Button.A, function () {
 })
 
 // B button on
+ 
 while (true) {
-    input.onButtonPressed(Button.B, function () {
- if (ButtonB = 1) {
-    pins.digitalWritePin(DigitalPin.P1, 1)
-    ButtonB = ButtonB -1
-// B button on
-while (ButtonB >= 0) {
-    input.onButtonPressed(Button.B, function () {
- if (ButtonB =1) {
-    pins.digitalWritePin(DigitalPin.P15, 1)
-    ButtonB = ButtonB -1
+    input.onButtonPressed(Button.A, function () {
+        if (ButtonB > 0) {
+            pins.digitalWritePin(DigitalPin.P0, 1)
+        } else {
 
-}
- else {
-    pins.digitalWritePin(DigitalPin.P1, 0)
-    ButtonB=ButtonB +1 
-}
+        }
+    })
+    }
+
     
-}
- else {
-    pins.digitalWritePin(DigitalPin.P15, 0)
-    ButtonB=ButtonB +1 
-}
-    
-})
-}
-
-
+   
 
 
 // A+B button on
