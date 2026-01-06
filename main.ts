@@ -5,4 +5,24 @@
  * This program works as a half adder
 */
 
+// A button
+input.onButtonPressed(Button.A, function () {
+    pins.digitalWritePin(DigitalPin.P0, 1)
 
+})
+
+// B button 
+input.onButtonPressed(Button.B, function () {
+    pins.digitalWritePin(DigitalPin.P0, 1)
+
+})
+
+// A+B button 
+input.onButtonPressed(Button.A, function () {
+    pins.digitalWritePin(DigitalPin.P0, 1)
+
+})
+
+input.onButtonPressed(Button.AB, function() {
+    
+})
