@@ -13,6 +13,16 @@ let InputAB = 0
 // A button on off
     input.onButtonPressed(Button.A, function () {
 if (InputA==0) {
+    pins.digitalWritePin(DigitalPin.P5, 1)
+    InputA=InputA+1
+} else {
+    pins.digitalWritePin(DigitalPin.P5, 0)
+    InputA=InputA-1
+}
+   
+// A button on off
+    input.onButtonPressed(Button.A, function () {
+if (InputA==0) {
     pins.digitalWritePin(DigitalPin.P0, 1)
     InputA=InputA+1
 } else {
@@ -26,6 +36,15 @@ if (InputA==0) {
 // B button on off
 input.onButtonPressed(Button.B, function () {
     if (InputB == 0) {
+        pins.digitalWritePin(DigitalPin.P11, 1)
+        InputB = InputB + 1
+    } else {
+        pins.digitalWritePin(DigitalPin.P11, 0)
+        InputB = InputB - 1
+    }
+// B button on off
+input.onButtonPressed(Button.B, function () {
+    if (InputB == 0) {
         pins.digitalWritePin(DigitalPin.P1, 1)
         InputB = InputB + 1
     } else {
@@ -34,6 +53,20 @@ input.onButtonPressed(Button.B, function () {
     }
 
 })  
+
+// A+B button on off
+input.onButtonPressed(Button.AB, function () {
+    if (InputAB == 0) {
+        pins.digitalWritePin(DigitalPin.P5, 1)
+        pins.digitalWritePin(DigitalPin.P11, 1)
+
+        InputAB = InputAB + 1
+    } else {
+        pins.digitalWritePin(DigitalPin.P5, 0)
+        pins.digitalWritePin(DigitalPin.P11, 0)
+
+        InputAB = InputAB - 1
+    }
 
 // A+B button on off
 input.onButtonPressed(Button.AB, function () {
@@ -50,6 +83,8 @@ input.onButtonPressed(Button.AB, function () {
     }
 
 })
+    
+
     
     if (InputA == 1, InputB == 0) {
         basic.showString("A-1 B-0")
