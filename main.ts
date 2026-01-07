@@ -10,6 +10,8 @@ let InputB = 0
 let InputA = 0
 let InputAB = 0
 
+
+
 // A button on off
     input.onButtonPressed(Button.A, function () {
 if (InputA==0) {
