@@ -10,6 +10,12 @@ let InputB = 0
 let InputA = 0
 let InputAB = 0
 
+// startup
+pins.digitalWritePin(DigitalPin.P0, 0)
+pins.digitalWritePin(DigitalPin.P1, 0)
+pins.digitalWritePin(DigitalPin.P8, 0)
+pins.digitalWritePin(DigitalPin.P9, 0)
+basic.showIcon(IconNames.Yes)
 
 
 // A button on off
@@ -24,31 +30,26 @@ if (InputA==0) {
    
 })
 
-
-// B button on off
-input.onButtonPressed(Button.B, function () {
-    if (InputB == 0) {
-        pins.digitalWritePin(DigitalPin.P11, 1)
-        InputB = InputB + 1
+while (true) {
+    // A pressed
+    if (input.buttonIsPressed(Button.A) == true) {
+        basic.showString("A")
+        pins.digitalWritePin(DigitalPin.P0, 1)
+        pins.digitalWritePin(DigitalPin.P1, 1)
     } else {
-        pins.digitalWritePin(DigitalPin.P11, 0)
-        InputB = InputB - 1
+        basic.showString("")
+        pins.digitalWritePin(DigitalPin.P0, 0)
+        pins.digitalWritePin(DigitalPin.P1, 0)
     }
 
-})  
-
-// A+B button on off
-input.onButtonPressed(Button.AB, function () {
-    if (InputAB == 0) {
-        pins.digitalWritePin(DigitalPin.P5, 1)
-        pins.digitalWritePin(DigitalPin.P11, 1)
-
-        InputAB = InputAB + 1
+    // B pressed
+    if (input.buttonIsPressed(Button.B) == true) {
+        basic.showString("B")
+        pins.digitalWritePin(DigitalPin.P8, 1)
+        pins.digitalWritePin(DigitalPin.P9, 1)
     } else {
-        pins.digitalWritePin(DigitalPin.P5, 0)
-        pins.digitalWritePin(DigitalPin.P11, 0)
-
-        InputAB = InputAB - 1
+        basic.showString("")
+        pins.digitalWritePin(DigitalPin.P8, 0)
+        pins.digitalWritePin(DigitalPin.P9, 0)
     }
-
-})
+}
