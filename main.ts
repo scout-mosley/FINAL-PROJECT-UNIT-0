@@ -15,22 +15,28 @@ basic.showIcon(IconNames.Yes)
 
 
 input.onButtonPressed(Button.A, function() {
-    // 1-0
-    basic.showString("1-0")
+    // 0+0
+    basic.showString("0+0=00")
+    pins.digitalWritePin(DigitalPin.P0, 0)
+    pins.digitalWritePin(DigitalPin.P8, 0)
+    basic.pause(1250)
+
+    // 0+1
+    basic.showString("0+1=01")
     pins.digitalWritePin(DigitalPin.P0, 1)
     basic.pause(1250)
 
-    //0-1
+    //1+0
     pins.digitalWritePin(DigitalPin.P0, 0)
     basic.pause(500)
-    basic.showString("0-1")
+    basic.showString("1+0=01")
     pins.digitalWritePin(DigitalPin.P8, 1)
     basic.pause(1250)
 
-    //1-1
+    //1+1
     pins.digitalWritePin(DigitalPin.P8, 0)
     basic.pause(500)
-    basic.showString("1-1")
+    basic.showString("1+1=10")
     pins.digitalWritePin(DigitalPin.P8, 1)
     pins.digitalWritePin(DigitalPin.P0, 1)
     basic.pause(1250)
