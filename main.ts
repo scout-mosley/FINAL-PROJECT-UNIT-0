@@ -12,7 +12,7 @@ pins.digitalWritePin(DigitalPin.P8, 0)
 pins.digitalWritePin(DigitalPin.P9, 0)
 basic.showIcon(IconNames.Yes)
 
-while (true) {
+while (false) {
     // A pressed
     if (input.buttonIsPressed(Button.A) == true) {
         basic.showString("A")
@@ -35,3 +35,27 @@ while (true) {
         pins.digitalWritePin(DigitalPin.P9, 0)
     }
 }
+
+input.onButtonPressed(Button.A, function() {
+    // 1-0
+    basic.showString("1-0")
+    pins.digitalWritePin(DigitalPin.P0, 1)
+    basic.pause(1250)
+
+    //0-1
+    pins.digitalWritePin(DigitalPin.P0, 0)
+    basic.pause(500)
+    basic.showString("0-1")
+    pins.digitalWritePin(DigitalPin.P8, 1)
+    basic.pause(1250)
+
+    //1-1
+    pins.digitalWritePin(DigitalPin.P8, 0)
+    basic.pause(500)
+    basic.showString("1-1")
+    pins.digitalWritePin(DigitalPin.P8, 1)
+    pins.digitalWritePin(DigitalPin.P0, 1)
+    basic.pause(1250)
+    pins.digitalWritePin(DigitalPin.P8, 0)
+    pins.digitalWritePin(DigitalPin.P0, 0)
+})
