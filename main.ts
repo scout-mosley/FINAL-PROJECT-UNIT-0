@@ -12,8 +12,6 @@ pins.digitalWritePin(DigitalPin.P8, 0)
 pins.digitalWritePin(DigitalPin.P9, 0)
 basic.showIcon(IconNames.Yes)
 
-
-
 input.onButtonPressed(Button.A, function() {
     // 0+0
     basic.showString("0+0=00")
